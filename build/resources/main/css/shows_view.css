@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+#showsLabel {
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-size: 29;
+    -fx-font-weight: 800;
+    -fx-text-fill: white;
+}
+
+#showTitle {
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-size: 20;
+    -fx-text-fill: #151515;
+}
+
+#showDesc {
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-size: 15;
+    -fx-text-fill: #151515;
+}
+
+#showDateLabel,
+#showSeatsLabel {
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-size: 15;
+    -fx-text-fill: #151515;
+}
+
+#bookButton {
+    -fx-background-color: #151515;
+    -fx-background-radius: 25;
+    -fx-text-fill: #DAA301;
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-size: 20;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
