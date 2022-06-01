@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+Label {
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-font-weight: 300;
+    -fx-font-size: 15px;
+    -fx-text-fill: #151515;
+}

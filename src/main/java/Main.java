@@ -1,5 +1,7 @@
 import controller.SigninContoller;
 import repository.*;
+import repository.database.DatabaseRepositoryBooking;
+import repository.database.DatabaseRepositorySeat;
 import service.*;
 import controller.Controller;
 
@@ -37,11 +39,15 @@ public class Main extends Application {
 
         IRepositorySpectator repositorySpectator = new DatabaseRepositorySpectator(properties);
         IRepositoryShow repositoryShow = new DatabaseRepositoryShow(properties);
+        IRepositorySeat repositorySeat = new DatabaseRepositorySeat(properties);
+        IRepositoryBooking repositoryBooking = new DatabaseRepositoryBooking(properties);
 
         ServiceSpectator serviceSpectator = new ServiceSpectator(repositorySpectator);
         ServiceShow serviceShow = new ServiceShow(repositoryShow);
+        ServiceSeat serviceSeat = new ServiceSeat(repositorySeat);
+        ServiceBooking serviceBooking = new ServiceBooking(repositoryBooking);
 
-        controller = new Controller(serviceSpectator, serviceShow);
+        controller = new Controller(serviceSpectator, serviceShow, serviceSeat, serviceBooking);
 
         initView(primaryStage);
         primaryStage.show();

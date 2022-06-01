@@ -1,13 +1,18 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.Show;
 import model.Spectator;
 import utils.MyListener;
@@ -22,6 +27,10 @@ public class ShowsController {
     private Spectator spectator;
     private List<Show> shows = new ArrayList<>();
     private MyListener myListener;
+    private Show currentShow;
+
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private Button bookButton;
@@ -61,6 +70,7 @@ public class ShowsController {
                 @Override
                 public void onClickListener(Show show) {
                     setChosenShow(show);
+                    currentShow = show;
                 }
             };
         }
@@ -92,5 +102,16 @@ public class ShowsController {
         String[] date = show.getDate().toString().split("T");
         showDateLabel.setText("Date: " + date[0] + " Time: " + date[1]);
         showSeatsLabel.setText("Remaining seats: " + show.getNumberOfSeats().toString());
+    }
+
+    public void bookButtonOnAction(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/welcome_view.fxml"));
+        Stage stage = (Stage) showsLabel.getScene().getWindow();
+        stage.setScene(new Scene(loader.load()));
+
+        WelcomeController welcomeController = loader.getController();
+        welcomeController.initialize(controller, spectator);
+        welcomeController.bookButtonOnAction(currentShow);
+
     }
 }

@@ -8,7 +8,7 @@ public class Booking implements Identifiable<Integer>, Serializable {
 
     private Integer ID;
     private Integer showID;
-    private List<Seat> seats;
+    private List<Tuple> seats;
 
     public Booking() {
         this.ID = 0;
@@ -34,11 +34,11 @@ public class Booking implements Identifiable<Integer>, Serializable {
         this.showID = showID;
     }
 
-    public List<Seat> getSeats() {
+    public List<Tuple> getSeats() {
         return seats;
     }
 
-    public void setSeats(List<Seat> seats) {
+    public void setSeats(List<Tuple> seats) {
         this.seats = seats;
     }
 

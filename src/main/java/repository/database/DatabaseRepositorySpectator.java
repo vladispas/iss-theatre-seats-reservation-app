@@ -36,7 +36,15 @@ public class DatabaseRepositorySpectator implements IRepositorySpectator {
 
     @Override
     public void delete(Spectator spectator) {
+        Connection connection = utils.getConnection();
 
+        try (PreparedStatement preparedStatement = connection.prepareStatement("delete from Spectators where id = ?")) {
+            preparedStatement.setInt(1, spectator.getID());
+
+            int result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error DB: " + e);
+        }
     }
 
     @Override
@@ -153,4 +161,38 @@ public class DatabaseRepositorySpectator implements IRepositorySpectator {
 
         return ID;
     }
+
+    @Override
+    public void addBooking(Integer ID, List<Integer> bookings) {
+        Connection connection = utils.getConnection();
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement("update Spectators set bookings = ? where id = ?")) {
+            String bookingsString = "";
+            for (Integer booking : bookings) {
+                bookingsString += booking + ",";
+            }
+
+            preparedStatement.setString(1, bookingsString);
+            preparedStatement.setInt(2, ID);
+
+            int result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error DB: " + e);
+        }
+    }
+
+    @Override
+    public void changePassword(Integer ID, String password) {
+        Connection connection = utils.getConnection();
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement("update Spectators set password = ? where id = ?")) {
+            preparedStatement.setString(1, password);
+            preparedStatement.setInt(2, ID);
+
+            int result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error DB: " + e);
+        }
+    }
+
 }

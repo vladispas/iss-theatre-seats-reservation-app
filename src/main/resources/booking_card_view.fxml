@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="1100.0" style="-fx-background-color: #F5F1E6; -fx-background-radius: 26;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingCardViewController">
+   <children>
+      <Label fx:id="titleLabel" layoutX="51.0" layoutY="79.0" stylesheets="@css/booking_card_view.css" text="Booking for:" />
+      <Label fx:id="dateLabel" layoutX="51.0" layoutY="104.0" stylesheets="@css/booking_card_view.css" text="Date" />
+      <Label fx:id="seatsLabel" alignment="CENTER_RIGHT" layoutX="1006.0" layoutY="79.0" stylesheets="@css/booking_card_view.css" text="Seats:" />
+      <Label fx:id="priceLabel" layoutX="1009.0" layoutY="104.0" stylesheets="@css/booking_card_view.css" text="Price:" />
+   </children>
+</AnchorPane>

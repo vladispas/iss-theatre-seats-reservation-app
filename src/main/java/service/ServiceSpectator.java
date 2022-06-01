@@ -4,6 +4,7 @@ import model.Spectator;
 import repository.IRepositorySpectator;
 
 import java.util.Collection;
+import java.util.List;
 
 public class ServiceSpectator {
 
@@ -17,6 +18,10 @@ public class ServiceSpectator {
         Spectator spectator = new Spectator(email, password);
 
         repositorySpectator.add(spectator);
+    }
+
+    public void delete(Spectator spectator) {
+        repositorySpectator.delete(spectator);
     }
 
     public Collection<Spectator> findAll() {
@@ -33,5 +38,13 @@ public class ServiceSpectator {
 
     public Integer findByEmail(String email) {
         return repositorySpectator.findByEmail(email);
+    }
+
+    public void addBooking(Integer ID, List<Integer> bookings) {
+        repositorySpectator.addBooking(ID, bookings);
+    }
+
+    public void changePassword(Integer ID, String password) {
+        repositorySpectator.changePassword(ID, password);
     }
 }

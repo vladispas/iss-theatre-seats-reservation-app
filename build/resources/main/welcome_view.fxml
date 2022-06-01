@@ -16,7 +16,7 @@
                   <Image url="@../../../../../../Users/vladi/OneDrive/Scoala/Facultate/Semestrul%204/ISS/Proiect/final/assets/navbar.png" />
                </image>
             </ImageView>
-            <Button layoutX="254.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Bookings" textAlignment="CENTER">
+            <Button layoutX="254.0" layoutY="51.0" onAction="#bookingsButtonOnAction" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Bookings" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -26,12 +26,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="740.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Account" textAlignment="CENTER">
+            <Button layoutX="740.0" layoutY="51.0" onAction="#accountButtonOnAction" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Account" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="896.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Sign out" textAlignment="CENTER">
+            <Button layoutX="896.0" layoutY="51.0" onAction="#signoutButtonOnAction" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@css/welcome_view.css" text="Sign out" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
